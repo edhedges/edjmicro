@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+
+		{% block styles %}
+			<!-- Project styles -->
+		{% endblock styles %}
+
+		{% block extra_styles %}
+			<!-- Extra styles -->
+		{% endblock extra_styles %}
+
+		<title>{% block title %}{% endblock title %}</title>
+	</head>
+	<body>
+		<header>
+	        {% block header %}
+	    		<!-- Page header -->
+	        {% endblock header %}
+    	</header>
+		{% block content %}
+			<!-- Page content -->
+		{% endblock content %}
+
+		<footer>
+			{% block footer %}
+				<!-- Page footer -->
+			{% endblock footer %}
+		</footer>
+		{% block scripts %}
+		<!-- Project scripts -->
+		{% endblock scripts %}
+
+		{% block extra_scripts %}
+			<!-- Extra scripts -->
+		{% endblock extra_scripts %}
+	</body>
+</html>

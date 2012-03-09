@@ -2,8 +2,23 @@
 
 Inspiration comes from [here](http://softwaremaniacs.org/blog/2011/01/07/django-micro-framework/en/).
 
-To use the boilerplate I recommend using [virtualenv](http://www.virtualenv.org/en/latest/index.html) for all pythong project. I also use [virtualenvwrapper](http://www.doughellmann.com/projects/virtualenvwrapper/) and can do `mkproject PROJECT_NAME` and have a virtualenv and an empty project directory tailored to that environment. The next step is to get the boilerplate. With the virtualenv activated and inside the project directoy run these commands:
+Requirements to be able to start a project:
 
-	- git init
-	- git pull git@github.com:edhedges/edjmicro.git master
-	- rm README.md
+	- [virtualenv](http://www.virtualenv.org/en/latest/index.html) 
+	- [virtualenvwrapper](http://www.doughellmann.com/projects/virtualenvwrapper/)
+	- [git](http://git-scm.com/)
+	- [pip](http://www.pip-installer.org/en/latest/index.html) - Automatically installed with virtualenv
+
+If the requirements have been met add a bash function to either your `.bash-profile` or `.bashrc`. I named my function `mkdjmicroproj` which runs all the commands necessary to start the project. Here it is:
+
+	mkdjmicroproj () {
+		mkproject --no-site-packages --promp=$1: $1 &&
+		git init &&
+		git pull git@github.com:edhedges/edjmicro.git master &&
+		rm README.md &&
+		pip install -r requirements.txt &&
+		chmod +x manage.py
+		./manage.py runserver
+	}
+
+The goal of this project is to make a very functional django boilerplate while keeping it as lightweight as possible.
