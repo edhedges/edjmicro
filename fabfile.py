@@ -1,1 +1,2 @@
-### fabfile.py ###
+### fabfile ###
+from fabric.api import *
