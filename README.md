@@ -4,10 +4,10 @@ Inspiration comes from [here](http://softwaremaniacs.org/blog/2011/01/07/django-
 
 Requirements to be able to start a project:
 
-	- [virtualenv](http://www.virtualenv.org/en/latest/index.html) 
-	- [virtualenvwrapper](http://www.doughellmann.com/projects/virtualenvwrapper/)
-	- [git](http://git-scm.com/)
-	- [pip](http://www.pip-installer.org/en/latest/index.html) - Automatically installed with virtualenv
+* [virtualenv](http://www.virtualenv.org/en/latest/index.html) 
+* [virtualenvwrapper](http://www.doughellmann.com/projects/virtualenvwrapper/)
+* [git](http://git-scm.com/)
+* [pip](http://www.pip-installer.org/en/latest/index.html) - Automatically installed with virtualenv
 
 If the requirements have been met add a bash function to either your `.bash-profile` or `.bashrc`. I named my function `mkdjmicroproj` which runs all the commands necessary to start the project. Here it is:
 
