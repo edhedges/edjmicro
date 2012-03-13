@@ -1,6 +1,6 @@
 ## edjmicro - A simple boilerplate for using django as a micro framework ##
 
-Inspiration comes from [here](http://softwaremaniacs.org/blog/2011/01/07/django-micro-framework/en/).
+Inspiration comes from [here](http://softwaremaniacs.org/blog/2011/01/07/django-micro-framework/en/) and structure comes from my origin boilerplate [here](https://github.com/edhedges/eds-djangoplate).
 
 Requirements to be able to start a project:
 
