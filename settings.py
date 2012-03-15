@@ -28,8 +28,7 @@ if not settings.configured:
             STATIC_URL = 'http://www.edhedges.com/static/PROJECT_ID/',
             INSTALLED_APPS = (
                 'django.contrib.staticfiles',
-                #uncomment to use fabric
-                #'fabric',        	
+                'fabric',        	
             ),
         )
     if not LIVEHOST:
@@ -47,7 +46,6 @@ if not settings.configured:
             ),
             INSTALLED_APPS = (
                 'django.contrib.staticfiles',
-                #uncomment to use fabric
-                #'fabric',          
+                'fabric',          
             ),
         )
