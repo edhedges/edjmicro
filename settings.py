@@ -1,6 +1,7 @@
 ### settings ###
 import socket, os
 from django.conf import settings
+from project import PROJECT_ID
 
 def contains(str, substr):
     if str.find(substr) != -1:
