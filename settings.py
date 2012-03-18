@@ -1,6 +1,6 @@
 ### settings ###
 import socket, os
-from project import PROJECT_ID
+from conf.project import PROJECT_ID
 
 def contains(str, substr):
     if str.find(substr) != -1:
