@@ -11,15 +11,15 @@ Requirements to be able to start a project:
 
 If the requirements have been met add a bash function to either your `.bash-profile` or `.bashrc`. I named my function `mkdjmicroproj` which runs all the commands necessary to start the project. Here it is:
 
-	mkdjmicroproj () {
-		mkproject --no-site-packages --promp=$1: $1 &&
-		git init &&
-		git pull git@github.com:edhedges/edjmicro.git master &&
-		rm README.md &&
-		pip install -r conf/requirements.txt &&
-		chmod +x manage.py
-                ./manage.py new_secret
-		./manage.py runserver
-	}
+    mkdjmicroproj () {
+        mkproject --no-site-packages --promp=$1: $1 &&
+        git init &&
+        git pull git@github.com:edhedges/edjmicro.git master &&
+        rm README.md &&
+        pip install -r conf/requirements.txt &&
+        chmod +x manage.py &&
+        ./manage.py new_secret &&
+        ./manage.py runserver
+    }
 
 The goal of this project is to make a very functional django boilerplate while keeping it as lightweight as possible.
