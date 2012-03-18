@@ -18,6 +18,7 @@ If the requirements have been met add a bash function to either your `.bash-prof
 		rm README.md &&
 		pip install -r conf/requirements.txt &&
 		chmod +x manage.py
+                ./manage.py new_secret
 		./manage.py runserver
 	}
 
