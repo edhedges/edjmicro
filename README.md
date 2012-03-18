@@ -16,7 +16,7 @@ If the requirements have been met add a bash function to either your `.bash-prof
 		git init &&
 		git pull git@github.com:edhedges/edjmicro.git master &&
 		rm README.md &&
-		pip install -r requirements.txt &&
+		pip install -r conf/requirements.txt &&
 		chmod +x manage.py
 		./manage.py runserver
 	}

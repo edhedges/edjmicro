@@ -1,6 +1,5 @@
 ### settings ###
 import socket, os
-from django.conf import settings
 from project import PROJECT_ID
 
 def contains(str, substr):
@@ -16,37 +15,29 @@ else:
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
-if not settings.configured:
-    if LIVEHOST:
-        settings.configure(
-            DEBUG = True,
-            
-            ROOT_URLCONF = 'urls',
-            TEMPLATE_DIRS = (
-                os.path.join(PROJECT_ROOT, 'templates/'),   
-            ),
-            STATIC_ROOT = '/home/edhedges/webapps/static/PROJECT_ID/',
-            STATIC_URL = 'http://www.edhedges.com/static/PROJECT_ID/',
-            INSTALLED_APPS = (
-                'django.contrib.staticfiles',
-                'fabric',        	
-            ),
-        )
-    if not LIVEHOST:
-        settings.configure(
-            DEBUG = True,
-            
-            ROOT_URLCONF = 'urls',
-            TEMPLATE_DIRS = (
-                os.path.join(PROJECT_ROOT, 'templates/'),   
-            ),
-            STATIC_ROOT = '/static/',
-            STATIC_URL = '/static/',
-            STATICFILES_DIRS = (
-                os.path.join(PROJECT_ROOT, 'static/'),
-            ),
-            INSTALLED_APPS = (
-                'django.contrib.staticfiles',
-                'fabric',          
-            ),
-        )
+## Global settings ###
+ROOT_URLCONF = 'urls'
+TEMPLATE_DIRS = (
+    os.path.join(PROJECT_ROOT, 'templates/'),   
+)
+SECRET_KEY = ''
+INSTALLED_APPS = (
+        'django.contrib.staticfiles',
+        #'fabric',
+        'apps.new_secret',   
+)
+
+## Settings used when running live on WebFaction ##
+if LIVEHOST:
+    DEBUG = False
+    STATIC_ROOT = '/home/edhedges/webapps/static/PROJECT_ID/'
+    STATIC_URL = 'http://www.edhedges.com/static/PROJECT_ID/'
+
+## Settings used locally for development ##
+if not LIVEHOST:
+    DEBUG = True
+    STATIC_ROOT = '/static/'
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = (
+        os.path.join(PROJECT_ROOT, 'static/'),
+    )
