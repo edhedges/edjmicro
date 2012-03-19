@@ -9,8 +9,8 @@ env.password = ROOT_USER_PASSWORD
 
 ## home, webapps, and python path tailored for webfaction ##
 env.home_dir = '/home/%s' % ROOT_USER_NAME
-env.webapps_dir = env.my_dir + '/webapps'
-env.host_python_dir = env.my_dir + '/lib/python2.7'
+env.webapps_dir = env.home_dir + '/webapps'
+env.host_python_dir = env.home_dir + '/lib/python2.7'
 
 ## pyprojects and static directories ##
 env.projects_dir = env.webapps_dir + '/pyproject'
@@ -19,7 +19,7 @@ env.static_dir = env.webapps_dir + '/static/%s' % PROJECT_ID
 ## apache2 bin and conf, virtualenv, and current project directories  ##
 env.apache_bin_dir = env.projects_dir + '/apache2/bin'
 env.apache_conf_dir = env.projects_dir + '/apache2/conf'
-env.virtualenv_dir = env.project_dir + '/virtualenvs'
+env.virtualenv_dir = env.projects_dir + '/virtualenvs'
 env.current_project_dir = env.projects_dir + '/%s' % PROJECT_ID
 
 ## projects virtualenv  ##
@@ -36,9 +36,10 @@ def run_server_plus():
     """
     Installs requirements via pip, syncs the local db, migrates any changes to db via south, and runs local server
     """
-    local('pip install -r requirements.txt')
-    local('python manage.py syncdb')
-    local('python manage.py migrate')
+    local('pip install -r conf/requirements.txt')
+    ## The following two commands are optional if using database which, is not assumed with edjmicro ##
+    #local('python manage.py syncdb')
+    #local('python manage.py migrate')
     local('python manage.py runserver')
 
 def run_local_smtp():
